@@ -1,11 +1,11 @@
 # note
 
-```
-//创建 app 路由
+```cmd
+// 创建 app 路由
 D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate module app-routing --flat --module=app
 CREATE src/app/app-routing.module.spec.ts (308 bytes)
 CREATE src/app/app-routing.module.ts (194 bytes)
-UPDATE src/app/app.module.ts (564 bytes)  
+UPDATE src/app/app.module.ts (564 bytes)
 
 // ng generate module product --routing //创建一个模块带路由
 D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate module user --routing
@@ -21,7 +21,32 @@ CREATE src/app/user/user-login/user-login.component.ts (284 bytes)
 CREATE src/app/user/user-login/user-login.component.css (0 bytes)
 UPDATE src/app/user/user.module.ts (361 bytes)
 
+// 安装angular UI组件
+$npm install --save @angular/material @angular/cdk @angular/animations
+
+// 先创建core/services 目录，再创建user服务层
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service core/services/user
+CREATE src/app/core/service/user.service.spec.ts (362 bytes)
+CREATE src/app/core/service/user.service.ts (133 bytes)
+
+//创建 api 基础类
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate class core/services/api/api-base --type=service
+CREATE src/app/core/services/api/api-base.service.ts (25 bytes)
+
+// 创建 api 服务层, 继承 api-base
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service core/services/api/api-user
+CREATE src/app/core/service/api/api-user.service.spec.ts (381 bytes)
+CREATE src/app/core/service/api/api-user.service.ts (136 bytes)
+
+// 创建user 类型model
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate interface core/models/user --type=model
+CREATE src/app/core/models/user.model.ts (26 bytes)
 ```
+
+bug 列表
+
+1. ngMode 不工作？
+   > 需 将 FormsModule 导入到相应模块，注意每个模块是相互独立的
 
 # AngularDemo3
 

@@ -1,3 +1,17 @@
-<p>
-  user-login works!
-</p>
+<div>
+  <p>
+    user-login works!{{ test}}
+    <input type="text" />
+  </p>
+  <div class="login-panel">
+    <mat-form-field>
+      <input [(ngModel)]="loginID" matInput placeholder="LoginID">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input [(ngModel)]="password" matInput type="password" placeholder="password">
+    </mat-form-field>
+
+    <button (click)="doLogin()" mat-raised-button color="primary">Login</button>
+  </div>
+</div>
