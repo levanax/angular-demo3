@@ -1,3 +1,28 @@
+# note
+
+```
+//创建 app 路由
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate module app-routing --flat --module=app
+CREATE src/app/app-routing.module.spec.ts (308 bytes)
+CREATE src/app/app-routing.module.ts (194 bytes)
+UPDATE src/app/app.module.ts (564 bytes)  
+
+// ng generate module product --routing //创建一个模块带路由
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate module user --routing
+CREATE src/app/user/user-routing.module.ts (247 bytes)
+CREATE src/app/user/user.module.spec.ts (259 bytes)
+CREATE src/app/user/user.module.ts (271 bytes)
+
+// 创建一个login组件 属于 user 模块
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate component user/user-login --module=user
+CREATE src/app/user/user-login/user-login.component.html (29 bytes)
+CREATE src/app/user/user-login/user-login.component.spec.ts (650 bytes)
+CREATE src/app/user/user-login/user-login.component.ts (284 bytes)
+CREATE src/app/user/user-login/user-login.component.css (0 bytes)
+UPDATE src/app/user/user.module.ts (361 bytes)
+
+```
+
 # AngularDemo3
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
