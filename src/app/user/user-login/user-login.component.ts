@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -9,7 +10,7 @@ import { UserService } from '../../core';
 export class UserLoginComponent implements OnInit {
   loginID: string;
   password: string;
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
     this.loginID = 'levan';
     this.password = '123456';
   }
@@ -20,8 +21,12 @@ export class UserLoginComponent implements OnInit {
       loginID: this.loginID,
       password: this.password
     };
-    this.userService.login(data).subscribe(data => {
-      console.debug(data);
-    });
+    this.userService.login(data).subscribe(
+      data => {
+        console.debug(data);
+        this.router.navigateByUrl('product/list');
+      },
+      err => {}
+    );
   }
 }

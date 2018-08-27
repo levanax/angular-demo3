@@ -1,5 +1,7 @@
 # note
 
+> 提醒：新增模块需重启服务!!!
+
 ```cmd
 // 创建 app 路由
 D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate module app-routing --flat --module=app
@@ -38,6 +40,14 @@ CREATE src/app/core/service/user.service.ts (133 bytes)
 // 创建user 类型model
 D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate interface core/models/user --type=model
 CREATE src/app/core/models/user.model.ts (26 bytes)
+
+//创建 product 列表管理
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate component product/product-list --module=product
+CREATE src/app/product/product-list/product-list.component.html (31 bytes)
+CREATE src/app/product/product-list/product-list.component.spec.ts (664 bytes)
+CREATE src/app/product/product-list/product-list.component.ts (292 bytes)
+CREATE src/app/product/product-list/product-list.component.css (0 bytes)
+UPDATE src/app/product/product.module.ts (381 bytes)
 ```
 
 bug 列表
