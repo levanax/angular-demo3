@@ -10,7 +10,10 @@ export class UserLoginComponent implements OnInit {
   test: string;
   loginID: string;
   password: string;
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {
+    this.loginID = '12';
+    this.password = 'adfasdf';
+  }
 
   ngOnInit() {}
   doLogin() {
