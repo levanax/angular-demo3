@@ -1,0 +1,19 @@
+.container {
+  height: 100%;
+  width: 100%;
+}
+.layout-horizontal {
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+}
+.layout-horizontal .left {
+  height: 100%;
+  -webkit-flex: 2;
+  flex: 2;
+}
+.layout-horizontal .main {
+  height: 100%;
+  -webkit-flex: 10;
+  flex: 10;
+}
