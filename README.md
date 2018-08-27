@@ -24,19 +24,16 @@ UPDATE src/app/user/user.module.ts (361 bytes)
 // 安装angular UI组件
 $npm install --save @angular/material @angular/cdk @angular/animations
 
+//创建 api 服务, get, post, put,delete
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service core/services/api
+CREATE src/app/core/services/api.service.spec.ts (356 bytes)
+CREATE src/app/core/services/api.service.ts (132 bytes)
+
 // 先创建core/services 目录，再创建user服务层
 D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service core/services/user
 CREATE src/app/core/service/user.service.spec.ts (362 bytes)
 CREATE src/app/core/service/user.service.ts (133 bytes)
 
-//创建 api 基础类
-D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate class core/services/api/api-base --type=service
-CREATE src/app/core/services/api/api-base.service.ts (25 bytes)
-
-// 创建 api 服务层, 继承 api-base
-D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service core/services/api/api-user
-CREATE src/app/core/service/api/api-user.service.spec.ts (381 bytes)
-CREATE src/app/core/service/api/api-user.service.ts (136 bytes)
 
 // 创建user 类型model
 D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate interface core/models/user --type=model
