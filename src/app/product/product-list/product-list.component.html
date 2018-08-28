@@ -2,37 +2,83 @@
   <p>
     product-list works!
   </p>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <p-table [columns]="cols" [value]="products" selectionMode="single" [(selection)]="selectProduct" (onRowSelect)="onRowSelect($event)"
+    [paginator]="true" [rows]="15">
+    <ng-template pTemplate="caption">
+      产品列表
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          {{col.header}}
+          <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr [pSelectableRow]="rowData">
+        <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary" let-rowData>
+      <div style="text-align:left">
+        <button type="button" pButton icon="fa fa-plus" (click)="showDialogToAdd()" label="Add"></button>
+      </div>
+    </ng-template>
+  </p-table>
 
-    <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+  <p-dialog header="Details" [(visible)]="displayEditDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="300">
+    <div class="ui-g ui-fluid" *ngIf="product">
 
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
+      <div class="ui-g-12" *ngIf="!newProduct">
+        <div class="ui-g-4">
+          <label for="vin">id</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="id" readonly="true" [(ngModel)]="product.id" />
+        </div>
+      </div>
 
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="spec">
-      <th mat-header-cell *matHeaderCellDef> spec </th>
-      <td mat-cell *matCellDef="let element"> {{element.spec}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="remark">
-      <th mat-header-cell *matHeaderCellDef> remark </th>
-      <td mat-cell *matCellDef="let element"> {{element.remark}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="year">name</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="name" [(ngModel)]="product.name" />
+        </div>
+      </div>
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="brand">spec</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="spec" [(ngModel)]="product.spec" />
+        </div>
+      </div>
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="color">weight</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="weight" [(ngModel)]="product.weight" />
+        </div>
+      </div>
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="color">remark</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="remark" [(ngModel)]="product.remark" />
+        </div>
+      </div>
+    </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" pButton icon="fa fa-close" (click)="delete()" label="Delete"></button>
+        <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
+      </div>
+    </p-footer>
+  </p-dialog>
 </div>
