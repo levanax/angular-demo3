@@ -48,12 +48,33 @@ CREATE src/app/product/product-list/product-list.component.spec.ts (664 bytes)
 CREATE src/app/product/product-list/product-list.component.ts (292 bytes)
 CREATE src/app/product/product-list/product-list.component.css (0 bytes)
 UPDATE src/app/product/product.module.ts (381 bytes)
+
+// create share module
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate module share
+CREATE src/app/share/share.module.spec.ts (267 bytes)
+CREATE src/app/share/share.module.ts (189 bytes)
+
+//创建 组件交互 服务
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service core/services/mission-interaction
+CREATE src/app/core/services/mission-interaction.service.spec.ts (447 bytes)
+CREATE src/app/core/services/mission-interaction.service.ts (147 bytes)
 ```
+
+## 新增 UI 框架
+
+> https://www.primefaces.org/primeng/#/setup
 
 bug 列表
 
 1. ngMode 不工作？
+
    > 需 将 FormsModule 导入到相应模块，注意每个模块是相互独立的
+
+2. 问题 2： share 模块 layout 组件 应用于 app.component 根组件，组件内引入的 第三方组件 MenuModule，需在 app.module 引入，方能正常解析运行。
+
+   > exports: 可依旧在 share 模块引入 MenuModule,但须 添加 exports: [MenuModule]
+
+3. 问题 3： 组件交互服务 service ，不可在 module 引入，会导致 订阅不工作
 
 # AngularDemo3
 

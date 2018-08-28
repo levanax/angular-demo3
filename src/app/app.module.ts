@@ -7,12 +7,14 @@ import { AppRoutingModule } from './/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MenuComponent, ShareModule } from './share';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MenuComponent],
   imports: [
-    CoreModule,
     BrowserModule,
+    CoreModule,
+    ShareModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,

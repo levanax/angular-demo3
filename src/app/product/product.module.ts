@@ -7,6 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [CommonModule, ProductRoutingModule, MatTableModule],
-  declarations: [ProductListComponent]
+  declarations: [ProductListComponent],
+  providers: []
 })
 export class ProductModule {}

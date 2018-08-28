@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from '../../core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Product, MissionInteractionService } from '../../core';
 import { MatTableDataSource } from '@angular/material/table';
 
 const data: Product[] = [
@@ -13,9 +13,11 @@ const data: Product[] = [
 })
 export class ProductListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'spec', 'weight', 'remark'];
-  constructor() {}
-
   dataSource = new MatTableDataSource<Product>(data);
+  constructor(private missionInteractionService: MissionInteractionService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.debug('ngOnInit ...');
+    this.missionInteractionService.showMenuTools(true);
+  }
 }
