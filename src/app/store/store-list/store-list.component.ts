@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MissionInteractionService, StoreService } from '../../core';
+import { Store, MissionInteractionService, StoreService } from '../../core';
 
 @Component({
   selector: 'app-store-list',
@@ -7,9 +7,21 @@ import { MissionInteractionService, StoreService } from '../../core';
   styleUrls: ['./store-list.component.css']
 })
 export class StoreListComponent implements OnInit {
-  constructor(private missionInteractionService: MissionInteractionService) {}
+  constructor(
+    private missionInteractionService: MissionInteractionService,
+    private storeService: StoreService
+  ) {}
 
   ngOnInit() {
     this.missionInteractionService.showMenuTools(true);
+    this.refreshList();
+  }
+  stores: Store[];
+  refreshList() {
+    this.storeService.getStores().subscribe(res => {
+      if (res.code === 'ok') {
+        this.stores = res.data;
+      }
+    });
   }
 }

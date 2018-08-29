@@ -1,3 +1,23 @@
-<p>
-  store-list works!
-</p>
+<h3>库存表</h3>
+<p-table [value]="stores">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>编号</th>
+      <th>名称</th>
+      <th>规格</th>
+      <th>存量</th>
+      <th>更新日期</th>
+      <th>备注</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-item>
+    <tr>
+      <td>{{item.id}}</td>
+      <td>{{item.productName}}</td>
+      <td>{{item.productSpec}}</td>
+      <td>{{item.total}}</td>
+      <td>{{item.updateDate}}</td>
+      <td>{{item.remark}}</td>
+    </tr>
+  </ng-template>
+</p-table>

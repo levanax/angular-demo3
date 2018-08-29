@@ -3,6 +3,8 @@
 > 提醒：新增模块需重启服务!!!
 
 ```cmd
+ng serve --port 8080 --host 0.0.0.0
+
 // 创建 app 路由
 D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate module app-routing --flat --module=app
 CREATE src/app/app-routing.module.spec.ts (308 bytes)
