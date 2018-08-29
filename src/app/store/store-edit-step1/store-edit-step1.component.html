@@ -1,0 +1,24 @@
+<div class="ui-g">
+  <p-table [columns]="cols" [value]="products" [(selection)]="selectedCar4" dataKey="id">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th style="width: 3em"></th>
+        <th *ngFor="let col of columns">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr [pSelectableRow]="rowData">
+        <td>
+          <p-tableRadioButton [value]="rowData"></p-tableRadioButton>
+        </td>
+        <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <p-button icon="pi pi-arrow-left" (click)="doBack($event)" label="返回"></p-button>
+  <p-button icon="pi pi-arrow-right" (click)="doNext($event)" label="下一步"></p-button>
+</div>

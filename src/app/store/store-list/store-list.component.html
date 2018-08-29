@@ -1,4 +1,14 @@
 <h3>库存表</h3>
+<p-toolbar>
+  <div class="ui-toolbar-group-left">
+    <button pButton type="button" (click)="handleNewStore($event)" label="新建" icon="pi pi-plus"></button>
+  </div>
+
+  <div class="ui-toolbar-group-right">
+    <button pButton type="button" icon="pi pi-search"></button>&nbsp;
+    <button pButton type="button" icon="pi pi-calendar" class="ui-button-success"></button>
+  </div>
+</p-toolbar>
 <p-table [value]="stores">
   <ng-template pTemplate="header">
     <tr>

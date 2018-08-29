@@ -1,0 +1,31 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h3>库存编辑</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div class="ui-g">
+      <div class="ui-g-5">
+
+      </div>
+      <div class="ui-g-7">
+        <mat-form-field>
+          <input matInput placeholder="入库/出库">
+        </mat-form-field><br/>
+        <mat-form-field>
+          <input matInput placeholder="数量">
+        </mat-form-field><br/>
+        <mat-form-field>
+          <input matInput placeholder="单价">
+        </mat-form-field><br/>
+        <mat-form-field>
+          <textarea matInput placeholder="备注"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <p-button icon="pi pi-arrow-left" (click)="doBack($event)" label="上一步"></p-button>
+    <p-button icon="pi pi-arrow-right" (click)="doSubmit($event)" label="提交"></p-button>
+  </mat-card-content>
+</mat-card>

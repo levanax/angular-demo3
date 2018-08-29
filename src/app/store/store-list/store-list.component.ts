@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, MissionInteractionService, StoreService } from '../../core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-store-list',
@@ -9,7 +10,8 @@ import { Store, MissionInteractionService, StoreService } from '../../core';
 export class StoreListComponent implements OnInit {
   constructor(
     private missionInteractionService: MissionInteractionService,
-    private storeService: StoreService
+    private storeService: StoreService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -23,5 +25,8 @@ export class StoreListComponent implements OnInit {
         this.stores = res.data;
       }
     });
+  }
+  handleNewStore(event) {
+    this.router.navigateByUrl('store/edit/step1');
   }
 }
