@@ -15,7 +15,7 @@ export class ProductService {
     return this.apiService.post('/products', product);
   }
   updateProduct(product: Product): Observable<any> {
-    return this.apiService.put('/products', product);
+    return this.apiService.put(`/products/${product.id}`, product);
   }
   deleteProduct(productID: number): Observable<any> {
     return this.apiService.delete(`/products/${productID}`);
