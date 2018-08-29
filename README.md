@@ -58,6 +58,23 @@ CREATE src/app/share/share.module.ts (189 bytes)
 D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service core/services/mission-interaction
 CREATE src/app/core/services/mission-interaction.service.spec.ts (447 bytes)
 CREATE src/app/core/services/mission-interaction.service.ts (147 bytes)
+
+
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate module store --routing
+CREATE src/app/store/store-routing.module.ts (248 bytes)
+CREATE src/app/store/store.module.spec.ts (267 bytes)
+CREATE src/app/store/store.module.ts (275 bytes)
+
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate component store/store-list
+CREATE src/app/store/store-list/store-list.component.html (29 bytes)
+CREATE src/app/store/store-list/store-list.component.spec.ts (650 bytes)
+CREATE src/app/store/store-list/store-list.component.ts (284 bytes)
+CREATE src/app/store/store-list/store-list.component.css (0 bytes)
+UPDATE src/app/store/store.module.ts (365 bytes)
+
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service core/service/store
+CREATE src/app/core/service/store.service.spec.ts (368 bytes)
+CREATE src/app/core/service/store.service.ts (134 bytes)
 ```
 
 ## 新增 UI 框架

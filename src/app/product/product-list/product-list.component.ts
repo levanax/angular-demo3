@@ -24,11 +24,11 @@ export class ProductListComponent implements OnInit {
     this.missionInteractionService.showMenuTools(true);
 
     this.cols = [
-      { field: 'id', header: 'id' },
-      { field: 'name', header: 'name' },
-      { field: 'spec', header: 'spec' },
-      { field: 'weight', header: 'weight' },
-      { field: 'remark', header: 'remark' }
+      { field: 'id', header: '编号' },
+      { field: 'name', header: '名称' },
+      { field: 'spec', header: '规格' },
+      { field: 'weight', header: '重量' },
+      { field: 'remark', header: '备注' }
     ];
     this.refreshList();
   }

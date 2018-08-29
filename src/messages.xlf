@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="0ca8ff0326823a7a2d7f615dae4a62fdbea600d0" datatype="html">
+        <source>
+      产品列表
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/product/product-list/product-list.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e928864038ca70ee7d67bbf1fd71a01c3938a127" datatype="html">
+        <source>id</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/product/product-list/product-list.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6fc2c1a8969bb0645d798d2066d264882d206fcc" datatype="html">
+        <source>name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/product/product-list/product-list.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a3db4b05707b10317aac114d4aa26661d5e28a3f" datatype="html">
+        <source>spec</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/product/product-list/product-list.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="13e2b8099dfa8bf60d376248b53e9bc3a32e7743" datatype="html">
+        <source>weight</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/product/product-list/product-list.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="db2bacbf0285e118e685fa5472d5d7649517a8a4" datatype="html">
+        <source>remark</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/product/product-list/product-list.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user-login/user-login.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

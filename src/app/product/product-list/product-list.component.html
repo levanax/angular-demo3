@@ -4,7 +4,7 @@
   </p>
   <p-table [columns]="cols" [value]="products" selectionMode="single" [(selection)]="selectProduct" (onRowSelect)="onRowSelect($event)"
     [paginator]="true" [rows]="15">
-    <ng-template pTemplate="caption">
+    <ng-template pTemplate="caption" i18n>
       产品列表
     </ng-template>
     <ng-template pTemplate="header" let-columns>
@@ -31,10 +31,9 @@
 
   <p-dialog header="Details" [(visible)]="displayEditDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="300">
     <div class="ui-g ui-fluid" *ngIf="product">
-
       <div class="ui-g-12" *ngIf="!newProduct">
         <div class="ui-g-4">
-          <label for="vin">id</label>
+          <label for="vin" i18n>编号</label>
         </div>
         <div class="ui-g-8">
           <input pInputText id="id" readonly="true" [(ngModel)]="product.id" />
@@ -43,7 +42,7 @@
 
       <div class="ui-g-12">
         <div class="ui-g-4">
-          <label for="year">name</label>
+          <label for="name" i18n>名称</label>
         </div>
         <div class="ui-g-8">
           <input pInputText id="name" [(ngModel)]="product.name" />
@@ -51,7 +50,7 @@
       </div>
       <div class="ui-g-12">
         <div class="ui-g-4">
-          <label for="brand">spec</label>
+          <label for="spec" i18n>规格</label>
         </div>
         <div class="ui-g-8">
           <input pInputText id="spec" [(ngModel)]="product.spec" />
@@ -59,7 +58,7 @@
       </div>
       <div class="ui-g-12">
         <div class="ui-g-4">
-          <label for="color">weight</label>
+          <label for="weight" i18n>重量</label>
         </div>
         <div class="ui-g-8">
           <input pInputText id="weight" [(ngModel)]="product.weight" />
@@ -67,7 +66,7 @@
       </div>
       <div class="ui-g-12">
         <div class="ui-g-4">
-          <label for="color">remark</label>
+          <label for="remark" i18n>备注</label>
         </div>
         <div class="ui-g-8">
           <input pInputText id="remark" [(ngModel)]="product.remark" />
