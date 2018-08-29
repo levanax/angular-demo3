@@ -5,7 +5,7 @@ import {
   ProductService,
   Product
 } from '../../core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-store-edit-step1',
@@ -15,7 +15,12 @@ import { Router } from '@angular/router';
 export class StoreEditStep1Component implements OnInit {
   cols: any[];
   products: Product[];
-  constructor(private productService: ProductService, private router: Router) {}
+  selectedProducts: Product[];
+  constructor(
+    private productService: ProductService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.cols = [
@@ -25,9 +30,9 @@ export class StoreEditStep1Component implements OnInit {
       { field: 'weight', header: '重量' },
       { field: 'remark', header: '备注' }
     ];
-    this.productService.getProducts().subscribe(res => {
-      if (res.code === 'ok') {
-        this.products = res.data;
+    this.route.data.subscribe((data: { products: Product[] }) => {
+      if (data.products) {
+        this.products = data.products;
       }
     });
   }
@@ -36,6 +41,7 @@ export class StoreEditStep1Component implements OnInit {
   }
 
   doNext(event) {
+    console.log(this.selectedProducts);
     this.router.navigateByUrl('store/edit/step2');
   }
 }

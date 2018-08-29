@@ -77,6 +77,11 @@ UPDATE src/app/store/store.module.ts (365 bytes)
 D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service core/service/store
 CREATE src/app/core/service/store.service.spec.ts (368 bytes)
 CREATE src/app/core/service/store.service.ts (134 bytes)
+
+// 添加预加载数据服务
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service store/store-edit-step1/store-edit-step1-resolver
+CREATE src/app/store/store-edit-step1/store-edit-step1-resolver.service.spec.ts (473 bytes)
+CREATE src/app/store/store-edit-step1/store-edit-step1-resolver.service.ts (151 bytes)
 ```
 
 ## 新增 UI 框架
