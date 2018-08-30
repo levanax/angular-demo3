@@ -8,24 +8,77 @@
 
     <div class="ui-g">
       <div class="ui-g-5">
-
+        <table *ngIf="product" class="tbl">
+          <tr>
+            <td>编号</td>
+            <td>{{product.id}}</td>
+          </tr>
+          <tr>
+            <td>名称</td>
+            <td>{{product.name}}</td>
+          </tr>
+          <tr>
+            <td>规格</td>
+            <td>{{product.spec}}</td>
+          </tr>
+          <tr>
+            <td>重量</td>
+            <td>{{product.weight}}</td>
+          </tr>
+          <tr>
+            <td>备注</td>
+            <td>{{product.remark}}</td>
+          </tr>
+        </table>
       </div>
       <div class="ui-g-7">
+        <mat-radio-group [(ngModel)]="storeRecordTemp.instuctions">
+          <mat-radio-button value="import">入库</mat-radio-button>&nbsp;&nbsp;
+          <mat-radio-button value="export">出库</mat-radio-button>
+        </mat-radio-group><br/><br/>
         <mat-form-field>
-          <input matInput placeholder="入库/出库">
+          <input type="number" [(ngModel)]="storeRecordTemp.quantity" matInput placeholder="数量*">
         </mat-form-field><br/>
         <mat-form-field>
-          <input matInput placeholder="数量">
+          <input [(ngModel)]="storeRecordTemp.price" matInput placeholder="单价">
         </mat-form-field><br/>
         <mat-form-field>
-          <input matInput placeholder="单价">
-        </mat-form-field><br/>
-        <mat-form-field>
-          <textarea matInput placeholder="备注"></textarea>
+          <textarea [(ngModel)]="storeRecordTemp.remark" matInput placeholder="备注"></textarea>
         </mat-form-field>
       </div>
     </div>
-    <p-button icon="pi pi-arrow-left" (click)="doBack($event)" label="上一步"></p-button>
-    <p-button icon="pi pi-arrow-right" (click)="doSubmit($event)" label="提交"></p-button>
+    <div class="ui-g">
+      <div class="ui-g-5"></div>
+      <div class="ui-g-7">
+        <p-button icon="pi pi-arrow-left" (click)="doBack($event)" label="上一步"></p-button>&nbsp;&nbsp;&nbsp;
+        <p-button icon="pi pi-arrow-right" (click)="doSubmit($event)" label="提交"></p-button>
+      </div>
+    </div>
   </mat-card-content>
 </mat-card>
+<p-dialog header="确认页面" [(visible)]="visibleConfirmView" [modal]="true" [responsive]="true" [width]="700" [minWidth]="700">
+  <table *ngIf="product" class="tbl">
+    <tr>
+      <td>指令</td>
+      <td><span *ngIf='storeRecordTemp.instuctions === "import"; else exportTemplate '>入库</span>
+        <ng-template #exportTemplate>出库</ng-template>
+      </td>
+    </tr>
+    <tr>
+      <td>数量</td>
+      <td>{{storeRecordTemp.quantity}}</td>
+    </tr>
+    <tr>
+      <td>单价</td>
+      <td>{{storeRecordTemp.price}}</td>
+    </tr>
+    <tr>
+      <td>备注</td>
+      <td>{{storeRecordTemp.remark}}</td>
+    </tr>
+  </table>
+  <p-footer>
+    <button type="button" pButton icon="pi pi-check" [disabled]="!visibleConfirmView" (click)="doComfirmSubmit($event)" label="确认"></button>
+    <button type="button" pButton icon="pi pi-close" (click)="visibleConfirmView=false" label="取消" class="ui-button-secondary"></button>
+  </p-footer>
+</p-dialog>

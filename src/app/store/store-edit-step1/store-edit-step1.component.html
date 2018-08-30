@@ -1,7 +1,6 @@
 <mat-card>
   <mat-card-content>
     <div class="ui-g">
-
       <p-table [columns]="cols" [value]="products" [(selection)]="selectedProduct" dataKey="id">
         <ng-template pTemplate="header" let-columns>
           <tr>
@@ -22,7 +21,7 @@
           </tr>
         </ng-template>
       </p-table>
-      <p-button icon="pi pi-arrow-left" (click)="doBack($event)" label="返回"></p-button>
+      <p-button icon="pi pi-arrow-left" (click)="doBack($event)" label="返回"></p-button>&nbsp;&nbsp;&nbsp;
       <p-button icon="pi pi-arrow-right" (click)="doNext($event)" label="下一步"></p-button>
     </div>
   </mat-card-content>

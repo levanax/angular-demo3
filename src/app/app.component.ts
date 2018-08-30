@@ -1,6 +1,8 @@
 import { Component, Output } from '@angular/core';
 import { EventEmitter } from 'events';
 import { MissionInteractionService } from './core';
+import { MessageService } from 'primeng/api';
+import { Message } from 'primeng/components/common/message';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,10 @@ import { MissionInteractionService } from './core';
 export class AppComponent {
   title = 'demo3';
   showMenuTools: boolean = false;
-  constructor(private missionInteractionService: MissionInteractionService) {
+  constructor(
+    private missionInteractionService: MissionInteractionService,
+    private messageService: MessageService
+  ) {
     missionInteractionService.showMenuTools$.subscribe(
       show => {
         console.debug('Msg: ' + show);
@@ -20,5 +25,10 @@ export class AppComponent {
         console.log(err);
       }
     );
+
+    missionInteractionService.appNotification$.subscribe((data: Message) => {
+      console.log(`Msg:${data.detail}`);
+      this.messageService.add(data);
+    });
   }
 }

@@ -1,6 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="ui-g">
-
   <div [hidden]="!showMenuTools" class="ui-g-2 main-menu">
     <app-menu></app-menu>
   </div>
@@ -8,3 +7,6 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+<p-toast [style]="{marginTop: '80px'}" position="top-left" key="tl"></p-toast>
+<p-toast [style]="{marginTop: '80px'}" position="top-center" key="tc"></p-toast>

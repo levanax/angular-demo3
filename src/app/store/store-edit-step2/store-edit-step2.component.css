@@ -1,0 +1,10 @@
+.tbl tr td {
+  padding: 0.9em;
+}
+.tbl tr td:nth-of-type(1) {
+  padding-right: 3em;
+  font-weight: 600;
+}
+.tbl tr td:nth-of-type(1):after {
+  content: '：';
+}
