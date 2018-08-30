@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 import {
   MatFormFieldModule,
@@ -22,6 +23,7 @@ import {
     MatSelectModule,
     MatOptionModule,
     FormsModule,
+    MatCardModule,
     MatButtonModule
   ],
   exports: [

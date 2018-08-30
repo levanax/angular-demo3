@@ -4,6 +4,7 @@ import { StoreListComponent } from './store-list/store-list.component';
 import { StoreEditStep1Component } from './store-edit-step1/store-edit-step1.component';
 import { StoreEditStep2Component } from './store-edit-step2/store-edit-step2.component';
 import { StoreEditStep1ResolverService } from './store-edit-step1/store-edit-step1-resolver.service';
+import { StoreEditStep2ResolverService } from './store-edit-step2/store-edit-step2-resolver.service';
 
 const routes: Routes = [
   { path: 'list', component: StoreListComponent },
@@ -16,7 +17,10 @@ const routes: Routes = [
   },
   {
     path: 'edit/step2',
-    component: StoreEditStep2Component
+    component: StoreEditStep2Component,
+    resolve: {
+      product: StoreEditStep2ResolverService
+    }
   }
 ];
 

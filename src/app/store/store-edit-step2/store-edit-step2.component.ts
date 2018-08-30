@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { map, take } from 'rxjs/operators';
+import {
+  MissionInteractionService,
+  StoreService,
+  ProductService,
+  Product
+} from '../../core';
 
 @Component({
   selector: 'app-store-edit-step2',
@@ -7,9 +14,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./store-edit-step2.component.css']
 })
 export class StoreEditStep2Component implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let r: any = this.activatedRoute.snapshot.queryParamMap.get('productID');
+    console.log(r);
+
+    this.activatedRoute.data.subscribe((data: { product: Product }) => {
+      if (data.product) {
+      }
+    });
+  }
 
   doBack(event) {
     this.router.navigateByUrl('store/edit/step1');

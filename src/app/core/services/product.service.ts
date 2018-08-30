@@ -11,6 +11,9 @@ export class ProductService {
   getProducts(): Observable<any> {
     return this.apiService.get('/products');
   }
+  getProduct(productID: number): Observable<any> {
+    return this.apiService.get(`/products/${productID}`);
+  }
   addProduct(product: Product): Observable<any> {
     return this.apiService.post('/products', product);
   }

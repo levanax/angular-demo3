@@ -1,33 +1,37 @@
-<h3>库存表</h3>
-<p-toolbar>
-  <div class="ui-toolbar-group-left">
-    <button pButton type="button" (click)="handleNewStore($event)" label="新建" icon="pi pi-plus"></button>
-  </div>
+<mat-card>
+  <mat-card-content>
+    <h3>库存表</h3>
+    <p-toolbar>
+      <div class="ui-toolbar-group-left">
+        <button pButton type="button" (click)="handleNewStore($event)" label="新建" icon="pi pi-plus"></button>
+      </div>
 
-  <div class="ui-toolbar-group-right">
-    <button pButton type="button" icon="pi pi-search"></button>&nbsp;
-    <button pButton type="button" icon="pi pi-calendar" class="ui-button-success"></button>
-  </div>
-</p-toolbar>
-<p-table [value]="stores">
-  <ng-template pTemplate="header">
-    <tr>
-      <th>编号</th>
-      <th>名称</th>
-      <th>规格</th>
-      <th>存量</th>
-      <th>更新日期</th>
-      <th>备注</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-item>
-    <tr>
-      <td>{{item.id}}</td>
-      <td>{{item.productName}}</td>
-      <td>{{item.productSpec}}</td>
-      <td>{{item.total}}</td>
-      <td>{{item.updateDate}}</td>
-      <td>{{item.remark}}</td>
-    </tr>
-  </ng-template>
-</p-table>
+      <div class="ui-toolbar-group-right">
+        <button pButton type="button" icon="pi pi-search"></button>&nbsp;
+        <button pButton type="button" icon="pi pi-calendar" class="ui-button-success"></button>
+      </div>
+    </p-toolbar>
+    <p-table [value]="stores">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>编号</th>
+          <th>名称</th>
+          <th>规格</th>
+          <th>存量</th>
+          <th>更新日期</th>
+          <th>备注</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td>{{item.id}}</td>
+          <td>{{item.productName}}</td>
+          <td>{{item.productSpec}}</td>
+          <td>{{item.total}}</td>
+          <td>{{item.updateDate}}</td>
+          <td>{{item.remark}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </mat-card-content>
+</mat-card>

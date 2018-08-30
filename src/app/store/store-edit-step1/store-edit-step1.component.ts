@@ -15,7 +15,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class StoreEditStep1Component implements OnInit {
   cols: any[];
   products: Product[];
-  selectedProducts: Product[];
+  selectedProduct: Product;
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
@@ -41,7 +41,10 @@ export class StoreEditStep1Component implements OnInit {
   }
 
   doNext(event) {
-    console.log(this.selectedProducts);
-    this.router.navigateByUrl('store/edit/step2');
+    // console.log(this.selectedProduct);
+    // this.router.navigateByUrl('store/edit/step2', navigationExtras);
+    this.router.navigateByUrl(this.router.createUrlTree(['store/edit/step2']), {
+      queryParams: { productID: '111' }
+    });
   }
 }

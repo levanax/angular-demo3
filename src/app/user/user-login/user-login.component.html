@@ -1,13 +1,16 @@
-<div>
-  <div class="login-panel">
-    <mat-form-field>
-      <input [(ngModel)]="loginID" matInput placeholder="LoginID">
-    </mat-form-field>
+<mat-card>
+  <mat-card-content>
+    <div>
+      <div class="login-panel">
+        <mat-form-field>
+          <input [(ngModel)]="loginID" matInput placeholder="LoginID">
+        </mat-form-field>
 
-    <mat-form-field>
-      <input [(ngModel)]="password" matInput type="password" placeholder="password">
-    </mat-form-field>
+        <mat-form-field>
+          <input [(ngModel)]="password" matInput type="password" placeholder="password">
+        </mat-form-field>
 
-    <button (click)="doLogin()" mat-raised-button color="primary" i18n>Login</button>
-  </div>
-</div>
+        <button (click)="doLogin()" mat-raised-button color="primary" i18n>Login</button>
+      </div>
+    </div>
+  </mat-card-content>
