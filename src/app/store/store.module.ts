@@ -16,6 +16,7 @@ import { StoreEditStep1Component } from './store-edit-step1/store-edit-step1.com
 import { StoreEditStep2Component } from './store-edit-step2/store-edit-step2.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { DialogModule } from 'primeng/dialog';
+import { StoreRecordsComponent } from './store-records/store-records.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { DialogModule } from 'primeng/dialog';
   declarations: [
     StoreListComponent,
     StoreEditStep1Component,
-    StoreEditStep2Component
+    StoreEditStep2Component,
+    StoreRecordsComponent
   ]
 })
 export class StoreModule {}

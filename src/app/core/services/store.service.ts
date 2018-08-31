@@ -14,4 +14,7 @@ export class StoreService {
   postStoreRecord(storeRecord: StoreRecord): Observable<StoreRecord> {
     return this.apiService.post('/stores/records', storeRecord);
   }
+  getStoreRecords(): Observable<StoreRecord> {
+    return this.apiService.get('/stores/records');
+  }
 }

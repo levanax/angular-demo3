@@ -49,7 +49,7 @@ export class StoreEditStep2Component implements OnInit {
     this.storeRecord = {
       productID: this.product.id,
       userID: 1,
-      instuctions: this.storeRecordTemp.instuctions,
+      instructions: this.storeRecordTemp.instructions,
       quantity: this.storeRecordTemp.quantity,
       price: this.storeRecordTemp.price,
       remark: this.storeRecordTemp.remark

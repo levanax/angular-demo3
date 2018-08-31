@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<mat-card>
   <mat-card-header>
     <mat-card-title>
       <h3>库存编辑</h3>
@@ -32,7 +32,7 @@
         </table>
       </div>
       <div class="ui-g-7">
-        <mat-radio-group [(ngModel)]="storeRecordTemp.instuctions">
+        <mat-radio-group [(ngModel)]="storeRecordTemp.instructions">
           <mat-radio-button value="import">入库</mat-radio-button>&nbsp;&nbsp;
           <mat-radio-button value="export">出库</mat-radio-button>
         </mat-radio-group><br/><br/>
@@ -60,7 +60,7 @@
   <table *ngIf="product" class="tbl">
     <tr>
       <td>指令</td>
-      <td><span *ngIf='storeRecordTemp.instuctions === "import"; else exportTemplate '>入库</span>
+      <td><span *ngIf='storeRecordTemp.instructions === "import"; else exportTemplate '>入库</span>
         <ng-template #exportTemplate>出库</ng-template>
       </td>
     </tr>
