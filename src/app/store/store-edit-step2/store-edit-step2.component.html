@@ -5,7 +5,6 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-
     <div class="ui-g">
       <div class="ui-g-5">
         <table *ngIf="product" class="tbl">
@@ -32,12 +31,12 @@
         </table>
       </div>
       <div class="ui-g-7">
-        <mat-radio-group [(ngModel)]="storeRecordTemp.instructions">
+        <mat-radio-group [(ngModel)]="storeRecordTemp.instructions" required>
           <mat-radio-button value="import">入库</mat-radio-button>&nbsp;&nbsp;
           <mat-radio-button value="export">出库</mat-radio-button>
         </mat-radio-group><br/><br/>
         <mat-form-field>
-          <input type="number" [(ngModel)]="storeRecordTemp.quantity" matInput placeholder="数量*">
+          <input type="number" [(ngModel)]="storeRecordTemp.quantity" matInput placeholder="数量" required>
         </mat-form-field><br/>
         <mat-form-field>
           <input [(ngModel)]="storeRecordTemp.price" matInput placeholder="单价">
@@ -45,11 +44,7 @@
         <mat-form-field>
           <textarea [(ngModel)]="storeRecordTemp.remark" matInput placeholder="备注"></textarea>
         </mat-form-field>
-      </div>
-    </div>
-    <div class="ui-g">
-      <div class="ui-g-5"></div>
-      <div class="ui-g-7">
+        <br/>
         <p-button icon="pi pi-arrow-left" (click)="doBack($event)" label="上一步"></p-button>&nbsp;&nbsp;&nbsp;
         <p-button icon="pi pi-arrow-right" (click)="doSubmit($event)" label="提交"></p-button>
       </div>

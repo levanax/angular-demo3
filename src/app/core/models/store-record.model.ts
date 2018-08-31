@@ -1,7 +1,7 @@
 export interface StoreRecord {
   id?: number;
   productID: number;
-  userID: number;
+  userID?: number;
   instructions: string;
   quantity: number;
   price: number;
