@@ -92,6 +92,28 @@ CREATE src/app/store/store-records/store-records.component.css (0 bytes)
 UPDATE src/app/store/store.module.ts (1537 bytes)
 ```
 
+```
+// https://angular.cn/guide/deployment#server-configuration
+// 部署 NGinx 服务器
+server {
+        listen       8089;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+			#try_files $uri $uri/ /index.html =404; //用这个
+        }
+
+
+        #error_page  404              /404.html;
+        error_page  404              /index.html;//或这个
+```
+
 ## 新增 UI 框架
 
 > https://www.primefaces.org/primeng/#/setup
