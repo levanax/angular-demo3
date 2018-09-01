@@ -19,7 +19,10 @@ const routes: Routes = [
     data: { preload: true }
   },
   {
-    // 必须放在最后，当前面路由无法匹配时才会来此
+    /**
+     * https://angular.cn/guide/router#refactor-the-routing-configuration-into-a-emrouting-moduleem
+     * The ** path in the last route is a wildcard. The router will select this route if the requested URL doesn't match any paths for routes defined earlier in the configuration. This is useful for displaying a "404 - Not Found" page or redirecting to another route
+     */
     path: '**',
     redirectTo: 'user/login'
   }
