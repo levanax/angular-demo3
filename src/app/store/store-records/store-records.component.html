@@ -5,7 +5,7 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p-table [columns]="tblCols" #dt [value]="storeRecords" selectionMode="multiple" [(selection)]="selectedRows" [paginator]="true"
+    <p-table  [exportFilename]="'库存记录'" [columns]="tblCols" #dt [value]="storeRecords" selectionMode="multiple" [(selection)]="selectedRows" [paginator]="true"
       [rows]="tblPageRows">
       <ng-template pTemplate="caption">
         <div class="ui-helper-clearfix">
@@ -25,11 +25,17 @@
       </ng-template>
       <ng-template pTemplate="header" let-columns>
         <tr>
-          <th *ngFor="let col of columns">
+            <th style="width: 3em">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+          <th *ngFor="let col of columns"  [pSortableColumn]="col.field">
             {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
           </th>
         </tr>
         <tr>
+            <th style="width: 3em">
+            </th>
           <th *ngFor="let col of columns" [ngSwitch]="col.field">
             <input *ngSwitchCase="'productName'" class="tbl-filter-input" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
             <input *ngSwitchCase="'productSpec'" class="tbl-filter-input" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
@@ -45,6 +51,9 @@
       </ng-template>
       <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr [pSelectableRow]="rowData">
+            <td>
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
           <td *ngFor="let col of columns">
             <!-- <div *ngIf="col.field === 'instructions'; else otherCol">
               <div *ngIf="rowData[col.field]==='import';  else exportTemplate ">入库</div>

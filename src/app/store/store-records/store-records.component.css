@@ -1,3 +1,6 @@
 .tbl-filter-input {
   width: 100%;
 }
+.tbl-filter-calendar input {
+  width: 100%;
+}

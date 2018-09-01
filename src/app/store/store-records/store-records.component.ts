@@ -25,13 +25,13 @@ export class StoreRecordsComponent implements OnInit {
       { label: '入库', value: '入库' }
     ];
     this.tblCols = [
+      { field: 'updateDate', header: '日期' },
       { field: 'productName', header: '名称' },
       { field: 'productSpec', header: '规格' },
       { field: 'instructionsText', header: '指令' },
       { field: 'quantity', header: '数量' },
       { field: 'price', header: '单价' },
-      { field: 'remark', header: '备注' },
-      { field: 'updateDate', header: '日期' }
+      { field: 'remark', header: '备注' }
     ];
     this.storeService.getStoreRecords().subscribe((res: any) => {
       if (res.data && res.data.length > 0) {
