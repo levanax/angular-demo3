@@ -7,17 +7,21 @@ import { StoreEditStep1ResolverService } from './store-edit-step1/store-edit-ste
 import { StoreEditStep2ResolverService } from './store-edit-step2/store-edit-step2-resolver.service';
 import { StoreRecordsComponent } from './store-records/store-records.component';
 
+import { AuthGuard } from '../core';
+
 const routes: Routes = [
   { path: 'list', component: StoreListComponent },
   {
     path: 'edit/step1',
     component: StoreEditStep1Component,
+    canActivate: [AuthGuard],
     resolve: {
       products: StoreEditStep1ResolverService
     }
   },
   {
     path: 'edit/step2',
+    canActivate: [AuthGuard],
     component: StoreEditStep2Component,
     resolve: {
       product: StoreEditStep2ResolverService
@@ -25,6 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'records',
+    canActivate: [AuthGuard],
     component: StoreRecordsComponent
   }
 ];

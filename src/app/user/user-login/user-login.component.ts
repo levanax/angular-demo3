@@ -24,7 +24,12 @@ export class UserLoginComponent implements OnInit {
     this.userService.login(data).subscribe(
       data => {
         console.debug(data);
-        this.router.navigateByUrl('product/list');
+        if (this.userService.redirectUrl) {
+          this.router.navigateByUrl(this.userService.redirectUrl);
+          delete this.userService.redirectUrl;
+        } else {
+          this.router.navigateByUrl('store/list');
+        }
       },
       err => {}
     );
