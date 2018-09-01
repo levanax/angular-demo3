@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
           {
             label: '产品列表',
             icon: 'pi pi-fw pi-caret-right',
-            url: '/product/list'
+            routerLink: '/product/list'
           }
         ]
       },
@@ -27,12 +27,12 @@ export class MenuComponent implements OnInit {
           {
             label: '库存列表',
             icon: 'pi pi-fw pi-caret-right',
-            url: '/store/list'
+            routerLink: '/store/list'
           },
           {
             label: '库存记录',
             icon: 'pi pi-fw pi-caret-right',
-            url: '/store/records'
+            routerLink: '/store/records'
           }
         ]
       }
