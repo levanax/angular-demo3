@@ -3,6 +3,7 @@ export interface StoreRecord {
   productID: number;
   userID?: number;
   instructions: string;
+  instructionsText?: string;
   quantity: number;
   price: number;
   remark: string;

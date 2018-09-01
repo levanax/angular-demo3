@@ -5,29 +5,54 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p-table [value]="storeRecords">
-      <ng-template pTemplate="header">
+    <p-table [columns]="tblCols" #dt [value]="storeRecords" selectionMode="multiple" [(selection)]="selectedRows" [paginator]="true"
+      [rows]="tblPageRows">
+      <ng-template pTemplate="caption">
+        <div class="ui-helper-clearfix">
+          <button type="button" pButton icon="fa fa-file-o" iconPos="left" label="导出为 Excel 文件（全部）" (click)="dt.exportCSV()" style="float:left"></button>
+          <button type="button" pButton icon="fa fa-file" iconPos="left" label="导出为 Excel 文件（仅选择行）" (click)="dt.exportCSV({selectionOnly:true})"
+            style="float:right"></button>
+        </div>
+        <div style="text-align: right">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="每页行数" [(ngModel)]="tblPageRows">
+          </mat-form-field>
+          <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="搜索" (input)="dt.filterGlobal($event.target.value, 'contains')">
+          </mat-form-field>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
         <tr>
-          <th>名称</th>
-          <th>规格</th>
-          <th>指令</th>
-          <th>数量</th>
-          <th>单价</th>
-          <th>备注</th>
-          <th>日期</th>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+        </tr>
+        <tr>
+          <th *ngFor="let col of columns" [ngSwitch]="col.field">
+            <input *ngSwitchCase="'productName'" class="tbl-filter-input" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+            <input *ngSwitchCase="'productSpec'" class="tbl-filter-input" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+            <p-dropdown *ngSwitchCase="'instructionsText'" [options]="instructionsOption" [style]="{'width':'100%'}" (onChange)="dt.filter($event.value, col.field, 'equals')"></p-dropdown>
+
+            <input *ngSwitchCase="'quantity'" class="tbl-filter-input" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+            <input *ngSwitchCase="'price'" class="tbl-filter-input" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+            <input *ngSwitchCase="'remark'" class="tbl-filter-input" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+            <input *ngSwitchCase="'updateDate'" class="tbl-filter-input" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+
+          </th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-item>
-        <tr>
-          <td>{{item.productName}}</td>
-          <td>{{item.productSpec}}</td>
-          <td><span *ngIf="item.instructions==='import';  else exportTemplate ">入库</span>
-            <ng-template #exportTemplate>出库</ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+          <td *ngFor="let col of columns">
+            <!-- <div *ngIf="col.field === 'instructions'; else otherCol">
+              <div *ngIf="rowData[col.field]==='import';  else exportTemplate ">入库</div>
+              <ng-template #exportTemplate>出库</ng-template>
+            </div>
+            <ng-template #otherCol></ng-template> -->
+            {{rowData[col.field]}}
           </td>
-          <td>{{item.quantity}}</td>
-          <td>{{item.price}}</td>
-          <td>{{item.remark}}</td>
-          <td>{{item.updateDate}}</td>
         </tr>
       </ng-template>
     </p-table>

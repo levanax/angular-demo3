@@ -15,9 +15,28 @@ import {
 export class StoreRecordsComponent implements OnInit {
   constructor(private storeService: StoreService) {}
   storeRecords: StoreRecord[];
+  tblCols: any[];
+  tblPageRows: number = 10;
+  instructionsOption: any[];
   ngOnInit() {
+    this.instructionsOption = [
+      { label: '出/入库', value: null },
+      { label: '出库', value: '出库' },
+      { label: '入库', value: '入库' }
+    ];
+    this.tblCols = [
+      { field: 'productName', header: '名称' },
+      { field: 'productSpec', header: '规格' },
+      { field: 'instructionsText', header: '指令' },
+      { field: 'quantity', header: '数量' },
+      { field: 'price', header: '单价' },
+      { field: 'remark', header: '备注' },
+      { field: 'updateDate', header: '日期' }
+    ];
     this.storeService.getStoreRecords().subscribe((res: any) => {
-      this.storeRecords = res.data;
+      if (res.data && res.data.length > 0) {
+        this.storeRecords = this.storeService.processStoreRecordData(res.data);
+      }
     });
   }
 }

@@ -17,6 +17,8 @@ import { StoreEditStep2Component } from './store-edit-step2/store-edit-step2.com
 import { MatRadioModule } from '@angular/material/radio';
 import { DialogModule } from 'primeng/dialog';
 import { StoreRecordsComponent } from './store-records/store-records.component';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   imports: [
@@ -32,7 +34,9 @@ import { StoreRecordsComponent } from './store-records/store-records.component';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    DialogModule
+    DialogModule,
+    DropdownModule,
+    InputTextModule
   ],
   exports: [],
   declarations: [

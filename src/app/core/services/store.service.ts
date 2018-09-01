@@ -14,6 +14,14 @@ export class StoreService {
   postStoreRecord(storeRecord: StoreRecord): Observable<StoreRecord> {
     return this.apiService.post('/stores/records', storeRecord);
   }
+  processStoreRecordData(storeRecord: StoreRecord[]): StoreRecord[] {
+    let length = storeRecord.length;
+    for (let i = 0; i < length; i++) {
+      storeRecord[i].instructionsText =
+        storeRecord[i].instructions === 'export' ? '出库' : '入库';
+    }
+    return storeRecord;
+  }
   getStoreRecords(): Observable<StoreRecord> {
     return this.apiService.get('/stores/records');
   }
