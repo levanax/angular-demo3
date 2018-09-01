@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../core';
+import { UserService, MissionInteractionService } from '../../core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Message } from 'primeng/components/common/message';
 
 @Component({
   selector: 'app-user-login',
@@ -10,7 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserLoginComponent implements OnInit {
   loginID: string;
   password: string;
-  constructor(private userService: UserService, private router: Router) {
+  constructor(
+    private missionInteractionService: MissionInteractionService,
+    private userService: UserService,
+    private router: Router
+  ) {
     this.loginID = 'levan';
     this.password = '123456';
   }
@@ -22,13 +27,24 @@ export class UserLoginComponent implements OnInit {
       password: this.password
     };
     this.userService.login(data).subscribe(
-      data => {
-        console.debug(data);
-        if (this.userService.redirectUrl) {
-          this.router.navigateByUrl(this.userService.redirectUrl);
-          delete this.userService.redirectUrl;
+      res => {
+        if (res.code === 'ok') {
+          console.debug(res);
+          this.missionInteractionService.showMenuTools(true);
+          if (this.userService.redirectUrl) {
+            this.router.navigateByUrl(this.userService.redirectUrl);
+            delete this.userService.redirectUrl;
+          } else {
+            this.router.navigateByUrl('store/list');
+          }
         } else {
-          this.router.navigateByUrl('store/list');
+          let message: Message = {
+            key: 'tc',
+            severity: 'error',
+            summary: '系统提示',
+            detail: '登入名或密码错误！'
+          };
+          this.missionInteractionService.notification(message);
         }
       },
       err => {}

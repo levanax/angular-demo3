@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, MissionInteractionService, StoreService } from '../../core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Store, StoreService } from '../../core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-store-list',
@@ -8,14 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./store-list.component.css']
 })
 export class StoreListComponent implements OnInit {
-  constructor(
-    private missionInteractionService: MissionInteractionService,
-    private storeService: StoreService,
-    private router: Router
-  ) {}
+  constructor(private storeService: StoreService, private router: Router) {}
 
   ngOnInit() {
-    this.missionInteractionService.showMenuTools(true);
     this.refreshList();
   }
   stores: Store[];

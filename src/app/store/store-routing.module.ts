@@ -10,7 +10,11 @@ import { StoreRecordsComponent } from './store-records/store-records.component';
 import { AuthGuard } from '../core';
 
 const routes: Routes = [
-  { path: 'list', component: StoreListComponent },
+  {
+    path: 'list',
+    canActivate: [AuthGuard],
+    component: StoreListComponent
+  },
   {
     path: 'edit/step1',
     component: StoreEditStep1Component,

@@ -1,9 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="ui-g">
-  <div [hidden]="!showMenuTools" class="ui-g-2 main-menu">
+  <div [hidden]="!showMenuTools" [ngClass]="{'ui-g-2':showMenuTools,'main-menu':true}">
     <app-menu></app-menu>
   </div>
-  <div class="ui-g-10">
+  <div [ngClass]="{'ui-g-10':showMenuTools,'ui-g-12':!showMenuTools}">
     <router-outlet></router-outlet>
   </div>
 </div>

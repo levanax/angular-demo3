@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Product, MissionInteractionService, ProductService } from '../../core';
+import { Product, ProductService } from '../../core';
 import { ProductModule } from '../product.module';
 
 @Component({
@@ -8,10 +8,7 @@ import { ProductModule } from '../product.module';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  constructor(
-    private missionInteractionService: MissionInteractionService,
-    private productService: ProductService
-  ) {}
+  constructor(private productService: ProductService) {}
   displayEditDialog: boolean = false;
   product: Product;
   selectProduct: Product;
@@ -21,7 +18,6 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     console.debug('ngOnInit ...');
-    this.missionInteractionService.showMenuTools(true);
 
     this.cols = [
       { field: 'id', header: '编号' },
