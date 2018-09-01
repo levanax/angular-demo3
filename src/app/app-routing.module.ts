@@ -17,6 +17,11 @@ const routes: Routes = [
     loadChildren: './store/store.module#StoreModule',
     path: 'store',
     data: { preload: true }
+  },
+  {
+    // 必须放在最后，当前面路由无法匹配时才会来此
+    path: '**',
+    redirectTo: 'user/login'
   }
 ];
 
