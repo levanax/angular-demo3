@@ -54,9 +54,8 @@ export class StoreEditStep2Component implements OnInit {
       price: this.storeRecordTemp.price,
       remark: this.storeRecordTemp.remark
     };
-    this.storeService
-      .postStoreRecord(this.storeRecord)
-      .subscribe((res: any) => {
+    this.storeService.postStoreRecord(this.storeRecord).subscribe(
+      (res: any) => {
         if (res.code === 'ok') {
           this.router.navigateByUrl('/store/list');
           let message: Message = {
@@ -67,6 +66,16 @@ export class StoreEditStep2Component implements OnInit {
           };
           this.missionInteractionService.notification(message);
         }
-      });
+      },
+      res => {
+        let message: Message = {
+          key: 'tc',
+          severity: 'error',
+          summary: '系统提示' + res.code,
+          detail: res.message
+        };
+        this.missionInteractionService.notification(message);
+      }
+    );
   }
 }

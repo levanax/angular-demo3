@@ -24,7 +24,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'edit/step2',
+    path: 'edit/step2/:productID',
     canActivate: [AuthGuard],
     component: StoreEditStep2Component,
     resolve: {

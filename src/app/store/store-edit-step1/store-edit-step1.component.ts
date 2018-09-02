@@ -43,8 +43,8 @@ export class StoreEditStep1Component implements OnInit {
   doNext(event) {
     // console.log(this.selectedProduct);
     // this.router.navigateByUrl('store/edit/step2', navigationExtras);
-    this.router.navigateByUrl(this.router.createUrlTree(['store/edit/step2']), {
-      queryParams: { productID: '111' }
-    });
+    if (this.selectedProduct) {
+      this.router.navigate(['store/edit/step2', this.selectedProduct.id]);
+    }
   }
 }

@@ -24,7 +24,7 @@ export class StoreEditStep2ResolverService implements Resolve<Product> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<Product> {
-    return this.ps.getProduct(1).pipe(
+    return this.ps.getProduct(route.params['productID']).pipe(
       take(1),
       map(res => {
         if (res.code === 'ok') {
