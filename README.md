@@ -118,6 +118,19 @@ server {
         error_page  404              /index.html;//或这个
 ```
 
+```
+this.router.navigate(['store/edit/step2'], {
+        queryParams: {test:'test'},
+        preserveFragment: true
+      });
+
+this.activatedRoute.queryParamMap
+      .pipe(map(params => params.get('test') || 'None'))
+      .subscribe(test => {
+        console.log(test);
+      });
+```
+
 ## 新增 UI 框架
 
 > https://www.primefaces.org/primeng/#/setup
