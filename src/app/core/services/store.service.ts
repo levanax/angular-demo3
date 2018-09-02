@@ -17,8 +17,12 @@ export class StoreService {
   processStoreRecordData(storeRecord: StoreRecord[]): StoreRecord[] {
     let length = storeRecord.length;
     for (let i = 0; i < length; i++) {
-      storeRecord[i].instructionsText =
-        storeRecord[i].instructions === 'export' ? '出库' : '入库';
+      if (storeRecord[i].instructions === 'export') {
+        storeRecord[i].instructionsText = '出库';
+        storeRecord[i].quantity = 0 - storeRecord[i].quantity;
+      } else {
+        storeRecord[i].instructionsText = '入库';
+      }
     }
     return storeRecord;
   }
