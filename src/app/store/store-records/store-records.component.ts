@@ -15,6 +15,7 @@ import {
 export class StoreRecordsComponent implements OnInit {
   constructor(private storeService: StoreService) {}
   storeRecords: StoreRecord[];
+  selectedRows: StoreRecord[];
   tblCols: any[];
   tblPageRows: number = 10;
   instructionsOption: any[];

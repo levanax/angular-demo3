@@ -44,7 +44,7 @@ export class StoreEditStep2Component implements OnInit {
   doSubmit(event) {
     this.visibleConfirmView = true;
   }
-  doComfirmSubmit() {
+  doComfirmSubmit(event) {
     this.visibleConfirmView = false;
     this.storeRecord = {
       productID: this.product.id,
