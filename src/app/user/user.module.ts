@@ -5,6 +5,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 import {
   MatFormFieldModule,
@@ -20,6 +21,7 @@ import {
     UserRoutingModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
     MatSelectModule,
     MatOptionModule,
     FormsModule,

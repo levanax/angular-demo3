@@ -11,14 +11,16 @@
           </div>
           <div class="form-group">
             <mat-form-field class="full-width">
-              <input [(ngModel)]="password" required matInput type="password" placeholder="密码" name="passwordInput" #passwordInput="ngModel">
+              <input [(ngModel)]="password" required matInput [type]="loginPasswordInputHide ? 'password' : 'text'" placeholder="密码" name="passwordInput"
+                #passwordInput="ngModel">
+              <mat-icon matSuffix (click)="loginPasswordInputHide = !loginPasswordInputHide">{{loginPasswordInputHide ? 'visibility' : 'visibility_off'}}</mat-icon>
               <mat-error *ngIf="!(passwordInput.valid || passwordInput.pristine)">请输入密码</mat-error>
             </mat-form-field>
           </div>
           <br/>
           <br/>
 
-          <button type="submit" [disabled]="!loginForm.form.valid" mat-raised-button color="primary" i18n>Login</button>
+          <button class="full-width" type="submit" [disabled]="!loginForm.form.valid" mat-raised-button color="primary" i18n>Login</button>
         </form>
       </div>
     </div>

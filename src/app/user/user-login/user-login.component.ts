@@ -11,6 +11,7 @@ import { Message } from 'primeng/components/common/message';
 export class UserLoginComponent implements OnInit {
   loginID: string;
   password: string;
+  loginPasswordInputHide:boolean = true;
   constructor(
     private missionInteractionService: MissionInteractionService,
     private userService: UserService,
