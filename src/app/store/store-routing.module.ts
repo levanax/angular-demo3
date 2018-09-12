@@ -6,6 +6,7 @@ import { StoreEditStep2Component } from './store-edit-step2/store-edit-step2.com
 import { StoreEditStep1ResolverService } from './store-edit-step1/store-edit-step1-resolver.service';
 import { StoreEditStep2ResolverService } from './store-edit-step2/store-edit-step2-resolver.service';
 import { StoreRecordsComponent } from './store-records/store-records.component';
+import { StoreSummaryComponent } from './store-summary/store-summary.component';
 
 import { AuthGuard } from '../core';
 
@@ -35,6 +36,11 @@ const routes: Routes = [
     path: 'records',
     canActivate: [AuthGuard],
     component: StoreRecordsComponent
+  },
+  {
+    path: 'summary',
+    canActivate: [AuthGuard],
+    component: StoreSummaryComponent
   }
 ];
 

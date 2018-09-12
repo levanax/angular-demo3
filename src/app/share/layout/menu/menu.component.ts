@@ -33,6 +33,11 @@ export class MenuComponent implements OnInit {
             label: '库存记录',
             icon: 'pi pi-fw pi-caret-right',
             routerLink: '/store/records'
+          },
+          {
+            label: '库存汇总',
+            icon: 'pi pi-fw pi-caret-right',
+            routerLink: '/store/summary'
           }
         ]
       }

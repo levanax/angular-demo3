@@ -3,6 +3,8 @@
 > 提醒：新增模块需重启服务!!!
 
 ```cmd
+npm install xlsx --save
+
 ng serve --port 8080 --host 0.0.0.0
 
 // 创建 app 路由
@@ -94,6 +96,13 @@ UPDATE src/app/store/store.module.ts (1537 bytes)
 D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate service core/auth/auth-guard
 CREATE src/app/core/auth/auth-guard.service.spec.ts (393 bytes)
 CREATE src/app/core/auth/auth-guard.service.ts (138 bytes)
+
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate component store/store-summary
+CREATE src/app/store/store-summary/store-summary.component.html (32 bytes)
+CREATE src/app/store/store-summary/store-summary.component.spec.ts (671 bytes)
+CREATE src/app/store/store-summary/store-summary.component.ts (296 bytes)
+CREATE src/app/store/store-summary/store-summary.component.css (0 bytes)
+UPDATE src/app/store/store.module.ts (1790 bytes)
 ```
 
 ```

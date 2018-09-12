@@ -19,6 +19,7 @@ import { DialogModule } from 'primeng/dialog';
 import { StoreRecordsComponent } from './store-records/store-records.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
+import { StoreSummaryComponent } from './store-summary/store-summary.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { InputTextModule } from 'primeng/inputtext';
     StoreListComponent,
     StoreEditStep1Component,
     StoreEditStep2Component,
-    StoreRecordsComponent
+    StoreRecordsComponent,
+    StoreSummaryComponent
   ]
 })
 export class StoreModule {}

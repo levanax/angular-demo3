@@ -1,0 +1,83 @@
+<mat-card>
+  <mat-card-content>
+    <p-toolbar>
+      <div class="ui-toolbar-group-left">
+        <button pButton type="button" label="保存为 excel" (click)="exportCSV()" icon="pi pi-save"></button>
+        <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success"></button>
+
+        <i class="ui-toolbar-separator pi pi-bars" style="vertical-align: middle"></i>
+
+        <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="ui-button-warning"></p-splitButton>
+      </div>
+
+      <div class="ui-toolbar-group-right">
+        <button pButton type="button" icon="pi pi-search"></button>
+        <button pButton type="button" icon="pi pi-calendar" class="ui-button-success"></button>
+        <button pButton type="button" icon="pi pi-times" class="ui-button-danger"></button>
+      </div>
+    </p-toolbar>
+    <p-table #storeSummaryTbl [value]="sales">
+      <ng-template pTemplate="header">
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="14">8月份进销存 汇总表</th>
+        </tr>
+        <tr>
+          <th colspan="2">物料</th>
+          <th colspan="3">上月结存</th>
+          <th colspan="3">本月入库</th>
+          <th colspan="3">本月出库</th>
+          <th colspan="3">本月结存</th>
+        </tr>
+        <tr>
+          <th>序号</th>
+          <th>编号</th>
+          <th>名称</th>
+
+          <th>数量</th>
+          <th>单价</th>
+          <th>金额</th>
+
+          <th>数量</th>
+          <th>单价</th>
+          <th>金额</th>
+
+          <th>数量</th>
+          <th>单价</th>
+          <th>金额</th>
+
+          <th>数量</th>
+          <th>单价</th>
+          <th>金额</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-sale>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="footer">
+
+      </ng-template>
+    </p-table>
+
+  </mat-card-content>
+</mat-card>
