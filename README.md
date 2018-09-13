@@ -140,6 +140,34 @@ this.activatedRoute.queryParamMap
       });
 ```
 
+```json
+"settings": {
+    "workbench.activityBar.visible": false,
+    "workbench.colorCustomizations": {
+      "editor.background": "#C7EDCC",
+      "sideBar.background": "#fff",
+      "editorBracketMatch.background": "#FF0000",
+      "editorBracketMatch.border": "#FF0000"
+    },
+
+    "workbench.colorTheme": "Default Light+",
+    "workbench.iconTheme": "vscode-icons",
+    "window.zoomLevel": 0,
+    "extensions.ignoreRecommendations": true,
+    //"editor.fontSize": 18,
+    "prettier.singleQuote": true,
+    "eslint.options": {
+      "rules": {
+        "no-dupe-keys": 2
+      }
+    },
+    "vsicons.projectDetection.autoReload": true,
+    "files.autoSave": "onWindowChange",
+    "git.ignoreLimitWarning": true,
+    "editor.formatOnSave": true
+  }
+```
+
 ## 新增 UI 框架
 
 > https://www.primefaces.org/primeng/#/setup
