@@ -38,6 +38,11 @@ export class MenuComponent implements OnInit {
             label: '库存汇总',
             icon: 'pi pi-fw pi-caret-right',
             routerLink: '/store/summary'
+          },
+          {
+            label: '库存汇总-图表',
+            icon: 'pi pi-fw pi-caret-right',
+            routerLink: '/store/summary/chart'
           }
         ]
       }

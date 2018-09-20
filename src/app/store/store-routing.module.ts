@@ -7,6 +7,7 @@ import { StoreEditStep1ResolverService } from './store-edit-step1/store-edit-ste
 import { StoreEditStep2ResolverService } from './store-edit-step2/store-edit-step2-resolver.service';
 import { StoreRecordsComponent } from './store-records/store-records.component';
 import { StoreSummaryComponent } from './store-summary/store-summary.component';
+import { StoreSummaryChartComponent } from './store-summary-chart/store-summary-chart.component';
 
 import { AuthGuard } from '../core';
 
@@ -41,6 +42,11 @@ const routes: Routes = [
     path: 'summary',
     canActivate: [AuthGuard],
     component: StoreSummaryComponent
+  },
+  {
+    path: 'summary/chart',
+    canActivate: [AuthGuard],
+    component: StoreSummaryChartComponent
   }
 ];
 

@@ -20,6 +20,8 @@ import { StoreRecordsComponent } from './store-records/store-records.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { StoreSummaryComponent } from './store-summary/store-summary.component';
+import {CalendarModule} from 'primeng/calendar';
+import { StoreSummaryChartComponent } from './store-summary-chart/store-summary-chart.component';
 
 @NgModule({
   imports: [
@@ -37,7 +39,7 @@ import { StoreSummaryComponent } from './store-summary/store-summary.component';
     MatRadioModule,
     DialogModule,
     DropdownModule,
-    InputTextModule
+    InputTextModule,CalendarModule
   ],
   exports: [],
   declarations: [
@@ -45,7 +47,8 @@ import { StoreSummaryComponent } from './store-summary/store-summary.component';
     StoreEditStep1Component,
     StoreEditStep2Component,
     StoreRecordsComponent,
-    StoreSummaryComponent
+    StoreSummaryComponent,
+    StoreSummaryChartComponent
   ]
 })
 export class StoreModule {}

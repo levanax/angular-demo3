@@ -5,6 +5,8 @@
 ```cmd
 npm install xlsx --save
 
+npm install @antv/g2 --save
+
 ng serve --port 8080 --host 0.0.0.0
 
 // 创建 app 路由
@@ -103,9 +105,16 @@ CREATE src/app/store/store-summary/store-summary.component.spec.ts (671 bytes)
 CREATE src/app/store/store-summary/store-summary.component.ts (296 bytes)
 CREATE src/app/store/store-summary/store-summary.component.css (0 bytes)
 UPDATE src/app/store/store.module.ts (1790 bytes)
+
+D:\Levana.Xue\privateWorkspace\angular-demo3>ng generate component store/store-summary-chart
+CREATE src/app/store/store-summary-chart/store-summary-chart.component.html (38 bytes)
+CREATE src/app/store/store-summary-chart/store-summary-chart.component.spec.ts (707 bytes)
+CREATE src/app/store/store-summary-chart/store-summary-chart.component.ts (319 bytes)
+CREATE src/app/store/store-summary-chart/store-summary-chart.component.css (0 bytes)
+UPDATE src/app/store/store.module.ts (1984 bytes)
 ```
 
-```
+```config
 // https://angular.cn/guide/deployment#server-configuration
 // 部署 NGinx 服务器
 server {
@@ -127,7 +136,7 @@ server {
         error_page  404              /index.html;//或这个
 ```
 
-```
+```JavaScript
 this.router.navigate(['store/edit/step2'], {
         queryParams: {test:'test'},
         preserveFragment: true
